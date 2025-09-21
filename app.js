@@ -1,14 +1,16 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-
-let sumarAmigo = [];
+let escribaNombre = document.getElementById("amigo");
+let listaAmigos = [];
+let htmlListaAmigos = document.getElementById("listaAmigos");
+let botonSortear = document.getElementById("resultado");
 
 function agregarAmigo() {
-  let amigo = prompt("Ingrese el nombre de su amigo:");
-  if (amigo) {
-    sumarAmigo.push(amigo);
-    console.log(`Amigo ${amigo} agregado.`);
-  } else {
-    console.log("No se ingresó ningún nombre.");
-  }
+listaAmigos.push(escribaNombre.value);
+htmlListaAmigos.innerHTML += `<li>${escribaNombre.value}</li>`;
 }
 
+function sortearAmigo() {
+    let numeroAleatorio = Math.floor(Math.random() * listaAmigos.length);
+    let amigoSorteado = listaAmigos[numeroAleatorio];
+    botonSortear.innerHTML = `El amigo secreto es: ${amigoSorteado}`;
+
+}
